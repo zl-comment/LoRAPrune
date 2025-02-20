@@ -1,0 +1,1 @@
+python model_prune.py --base_model "D:\ZLCODE\model\Llama-2-7b-chat-hf" --data_path "./data/harmful_behaviors.csv" --ratio 0.3 --prune_freq 100 --blocksize 4 --output_dir "pruned_model"
