@@ -162,7 +162,7 @@ def train(
     if load_in_8bit:
         model = prepare_model_for_kbit_training(model)
 
-    # TODO: convert sparseLinear for model here
+    #
     # utils.convert_sparse_network(model, target_modules=lora_target_modules)
     config = LoraConfig(
         r=lora_r,
@@ -177,7 +177,7 @@ def train(
     # from peft import get_peft_model
     model = get_peft_model(model, config)
 
-    if data_path.endswith(".json"):  # todo: support jsonl
+    if data_path.endswith(".json"):  #
         data = load_dataset("json", data_files=data_path)
     elif data_path.endswith(".csv"):
         data = load_dataset("csv", data_files=data_path)
